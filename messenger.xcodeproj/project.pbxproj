@@ -19,6 +19,7 @@
 		7B501C841FEF8DB900995AD2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C801FEF8DB900995AD2 /* Friend.swift */; };
 		7B501C851FEF8DB900995AD2 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C811FEF8DB900995AD2 /* Friend+CoreDataProperties.swift */; };
 		7B501C871FEF90CB00995AD2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C861FEF90CB00995AD2 /* MessageCell.swift */; };
+		7BAE3FAA1FF0D54B002525F7 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAE3FA91FF0D54B002525F7 /* ChatLogController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7B501C801FEF8DB900995AD2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		7B501C811FEF8DB900995AD2 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B501C861FEF90CB00995AD2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		7BAE3FA91FF0D54B002525F7 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		7B501C511FEA52ED00995AD2 /* messenger */ = {
 			isa = PBXGroup;
 			children = (
+				7BAE3FA91FF0D54B002525F7 /* ChatLogController.swift */,
 				7B501C861FEF90CB00995AD2 /* MessageCell.swift */,
 				7B501C541FEA52ED00995AD2 /* FriendsController.swift */,
 				7B501C691FEF55B900995AD2 /* SubFriendController.swift */,
@@ -161,6 +164,7 @@
 				7B501C841FEF8DB900995AD2 /* Friend.swift in Sources */,
 				7B501C851FEF8DB900995AD2 /* Friend+CoreDataProperties.swift in Sources */,
 				7B501C531FEA52ED00995AD2 /* AppDelegate.swift in Sources */,
+				7BAE3FAA1FF0D54B002525F7 /* ChatLogController.swift in Sources */,
 				7B501C5B1FEA52ED00995AD2 /* messenger.xcdatamodeld in Sources */,
 				7B501C821FEF8DB900995AD2 /* Message.swift in Sources */,
 				7B501C831FEF8DB900995AD2 /* Message+CoreDataProperties.swift in Sources */,
