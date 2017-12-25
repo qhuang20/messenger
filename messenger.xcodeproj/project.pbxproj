@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7B501C531FEA52ED00995AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C521FEA52ED00995AD2 /* AppDelegate.swift */; };
-		7B501C551FEA52ED00995AD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C541FEA52ED00995AD2 /* ViewController.swift */; };
+		7B501C551FEA52ED00995AD2 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C541FEA52ED00995AD2 /* FriendsController.swift */; };
 		7B501C5B1FEA52ED00995AD2 /* messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C591FEA52ED00995AD2 /* messenger.xcdatamodeld */; };
 		7B501C5D1FEA52ED00995AD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B501C5C1FEA52ED00995AD2 /* Assets.xcassets */; };
 		7B501C601FEA52ED00995AD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B501C5E1FEA52ED00995AD2 /* LaunchScreen.storyboard */; };
 		7B501C681FEE19B700995AD2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C671FEE19B700995AD2 /* Extensions.swift */; };
-		7B501C6A1FEF55B900995AD2 /* FriendControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C691FEF55B900995AD2 /* FriendControllerHelper.swift */; };
+		7B501C6A1FEF55B900995AD2 /* SubFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C691FEF55B900995AD2 /* SubFriendController.swift */; };
 		7B501C821FEF8DB900995AD2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C7E1FEF8DB900995AD2 /* Message.swift */; };
 		7B501C831FEF8DB900995AD2 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C7F1FEF8DB900995AD2 /* Message+CoreDataProperties.swift */; };
 		7B501C841FEF8DB900995AD2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C801FEF8DB900995AD2 /* Friend.swift */; };
@@ -24,13 +24,13 @@
 /* Begin PBXFileReference section */
 		7B501C4F1FEA52ED00995AD2 /* messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B501C521FEA52ED00995AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B501C541FEA52ED00995AD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B501C541FEA52ED00995AD2 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		7B501C5A1FEA52ED00995AD2 /* messenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = messenger.xcdatamodel; sourceTree = "<group>"; };
 		7B501C5C1FEA52ED00995AD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B501C5F1FEA52ED00995AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B501C611FEA52ED00995AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B501C671FEE19B700995AD2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7B501C691FEF55B900995AD2 /* FriendControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendControllerHelper.swift; sourceTree = "<group>"; };
+		7B501C691FEF55B900995AD2 /* SubFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFriendController.swift; sourceTree = "<group>"; };
 		7B501C7E1FEF8DB900995AD2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7B501C7F1FEF8DB900995AD2 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B501C801FEF8DB900995AD2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -69,16 +69,16 @@
 			isa = PBXGroup;
 			children = (
 				7B501C861FEF90CB00995AD2 /* MessageCell.swift */,
-				7B501C541FEA52ED00995AD2 /* ViewController.swift */,
+				7B501C541FEA52ED00995AD2 /* FriendsController.swift */,
+				7B501C691FEF55B900995AD2 /* SubFriendController.swift */,
 				7B501C521FEA52ED00995AD2 /* AppDelegate.swift */,
-				7B501C691FEF55B900995AD2 /* FriendControllerHelper.swift */,
 				7B501C671FEE19B700995AD2 /* Extensions.swift */,
-				7B501C5C1FEA52ED00995AD2 /* Assets.xcassets */,
-				7B501C7E1FEF8DB900995AD2 /* Message.swift */,
-				7B501C7F1FEF8DB900995AD2 /* Message+CoreDataProperties.swift */,
-				7B501C801FEF8DB900995AD2 /* Friend.swift */,
-				7B501C811FEF8DB900995AD2 /* Friend+CoreDataProperties.swift */,
 				7B501C591FEA52ED00995AD2 /* messenger.xcdatamodeld */,
+				7B501C7E1FEF8DB900995AD2 /* Message.swift */,
+				7B501C801FEF8DB900995AD2 /* Friend.swift */,
+				7B501C7F1FEF8DB900995AD2 /* Message+CoreDataProperties.swift */,
+				7B501C811FEF8DB900995AD2 /* Friend+CoreDataProperties.swift */,
+				7B501C5C1FEA52ED00995AD2 /* Assets.xcassets */,
 				7B501C5E1FEA52ED00995AD2 /* LaunchScreen.storyboard */,
 				7B501C611FEA52ED00995AD2 /* Info.plist */,
 			);
@@ -156,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B501C551FEA52ED00995AD2 /* ViewController.swift in Sources */,
+				7B501C551FEA52ED00995AD2 /* FriendsController.swift in Sources */,
 				7B501C871FEF90CB00995AD2 /* MessageCell.swift in Sources */,
 				7B501C841FEF8DB900995AD2 /* Friend.swift in Sources */,
 				7B501C851FEF8DB900995AD2 /* Friend+CoreDataProperties.swift in Sources */,
@@ -164,7 +164,7 @@
 				7B501C5B1FEA52ED00995AD2 /* messenger.xcdatamodeld in Sources */,
 				7B501C821FEF8DB900995AD2 /* Message.swift in Sources */,
 				7B501C831FEF8DB900995AD2 /* Message+CoreDataProperties.swift in Sources */,
-				7B501C6A1FEF55B900995AD2 /* FriendControllerHelper.swift in Sources */,
+				7B501C6A1FEF55B900995AD2 /* SubFriendController.swift in Sources */,
 				7B501C681FEE19B700995AD2 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,17 +8,6 @@
 
 import UIKit
 
-//class Friend {
-//    var name: String?
-//    var profileImageName: String?
-//}
-//
-//class Message {
-//    var text: String?
-//    var date: Date?
-//
-//    var friend: Friend?
-//}
 
 class FriendsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -35,6 +24,10 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         collectionView?.register(MessageCell.self, forCellWithReuseIdentifier: cellId)
         
         setupData()
+    }
+    
+    internal func setupData() {
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,14 +53,6 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
 }
-
-
-
-
-
-
-
-
 
 
 

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let layout = UICollectionViewFlowLayout()
-        let friendsController = FriendsController(collectionViewLayout: layout)
+        let friendsController = SubFriendController(collectionViewLayout: layout)
         window?.rootViewController =  UINavigationController(rootViewController: friendsController)
         
         return true
