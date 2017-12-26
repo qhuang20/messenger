@@ -152,7 +152,7 @@ class BaseCell: UICollectionViewCell {
     }
     
     internal func setupViews() {
-        backgroundColor = .blue
+        //backgroundColor = .blue
     }
     
 }

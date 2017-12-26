@@ -40,43 +40,25 @@ class SubFriendsController: FriendsController {
     override func setupData() {
         
         clearData()
-        
-        let mark = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
-        mark.name = "Mark"
-        mark.profileImageName = "zuckprofile"
 
-        let markMessage = NSEntityDescription.insertNewObject(forEntityName: "Message", into: context) as! Message
-        markMessage.text = "hahhahahaha"
-        markMessage.date = Date() as NSDate
-        markMessage.friend = mark
+        let mark = createFriendWith(name: "Mark", profileImageName: "zuckprofile")
+        createMessageWith(text: "How are you doing today Jeffery?", friend: mark, minutesAgo: 0)
 
-        let steve = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
-        steve.name = "Steve"
-        steve.profileImageName = "steve_profile"
+        let steve = createFriendWith(name: "Steve", profileImageName: "steve_profile")
+        createMessageWith(text: "Good morning..", friend: steve, minutesAgo: 3)
+        createMessageWith(text: "Hello, how are you?", friend: steve, minutesAgo: 2, isSender: true)
+        createMessageWith(text: "Are you interested in buying an Apple device? We have a wide variety of apple devices that will suit your needs. Please make your purchase with us", friend: steve, minutesAgo: 1)
         
-        createMessageWith(text: "Good morning..", friend: steve, minutesAgo: 3, context: context)
-        createMessageWith(text: "Hello, how are you?", friend: steve, minutesAgo: 2, context: context)
-        createMessageWith(text: "Are you interested in buying an Apple device?", friend: steve, minutesAgo: 1, context: context)
+        let donald = createFriendWith(name: "Donald Trump", profileImageName: "donald_trump_profile")
+        createMessageWith(text: "You're fired", friend: donald, minutesAgo: 5)
+        createMessageWith(text: "You're beutiful", friend: donald, minutesAgo: 1)
+        createMessageWith(text: "China", friend: donald, minutesAgo: 4)
         
-        let donald = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
-        donald.name = "Donald Trump"
-        donald.profileImageName = "donald_trump_profile"
+        let gandhi = createFriendWith(name: "Mahatma Gandhi", profileImageName: "gandhi")
+        createMessageWith(text: "Love, Peace, and Joy", friend: gandhi, minutesAgo: 60 * 24)
         
-        createMessageWith(text: "You're fired", friend: donald, minutesAgo: 5, context: context)
-        createMessageWith(text: "You're beutiful", friend: donald, minutesAgo: 1, context: context)
-        createMessageWith(text: "China", friend: donald, minutesAgo: 4, context: context)
-        
-        let gandhi = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
-        gandhi.name = "Mahatma Gandhi"
-        gandhi.profileImageName = "gandhi"
-        
-        createMessageWith(text: "Love, Peace, and Joy", friend: gandhi, minutesAgo: 60 * 24, context: context)
-        
-        let hillary = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
-        hillary.name = "Hillary Clinton"
-        hillary.profileImageName = "hillary_profile"
-        
-        createMessageWith(text: "Please vote for me, you did for Billy!", friend: hillary, minutesAgo: 8 * 60 * 24, context: context)
+        let hillary = createFriendWith(name: "Hillary Clinton", profileImageName: "hillary_profile")
+        createMessageWith(text: "Please vote for me, you did for Billy!", friend: hillary, minutesAgo: 8 * 60 * 24)
         
         do {
             try context.save()
@@ -87,11 +69,20 @@ class SubFriendsController: FriendsController {
         loadData()
     }
     
-    private func createMessageWith(text: String, friend: Friend, minutesAgo: Double, context: NSManagedObjectContext) {
+    private func createFriendWith(name: String, profileImageName: String) -> Friend {
+        let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+        friend.name = name
+        friend.profileImageName = profileImageName
+        
+        return friend
+    }
+    
+    private func createMessageWith(text: String, friend: Friend, minutesAgo: Double, isSender: Bool = false) {
         let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: context) as! Message
         message.friend = friend
         message.text = text
         message.date = NSDate().addingTimeInterval(-minutesAgo * 60)
+        message.isSender = isSender
     }
     
     private func loadData() {
