@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SubFriendController: FriendsController {
+class SubFriendsController: FriendsController {
     
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
@@ -65,6 +65,18 @@ class SubFriendController: FriendsController {
         createMessageWith(text: "You're fired", friend: donald, minutesAgo: 5, context: context)
         createMessageWith(text: "You're beutiful", friend: donald, minutesAgo: 1, context: context)
         createMessageWith(text: "China", friend: donald, minutesAgo: 4, context: context)
+        
+        let gandhi = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+        gandhi.name = "Mahatma Gandhi"
+        gandhi.profileImageName = "gandhi"
+        
+        createMessageWith(text: "Love, Peace, and Joy", friend: gandhi, minutesAgo: 60 * 24, context: context)
+        
+        let hillary = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+        hillary.name = "Hillary Clinton"
+        hillary.profileImageName = "hillary_profile"
+        
+        createMessageWith(text: "Please vote for me, you did for Billy!", friend: hillary, minutesAgo: 8 * 60 * 24, context: context)
         
         do {
             try context.save()
