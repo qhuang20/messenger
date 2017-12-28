@@ -74,8 +74,8 @@
 			children = (
 				7BAE3FA91FF0D54B002525F7 /* ChatLogController.swift */,
 				7B501C861FEF90CB00995AD2 /* MessageCell.swift */,
-				7B501C541FEA52ED00995AD2 /* FriendsController.swift */,
 				7B501C691FEF55B900995AD2 /* SubFriendsController.swift */,
+				7B501C541FEA52ED00995AD2 /* FriendsController.swift */,
 				7B1AC1801FF1FB9700591080 /* CustomTabBarController.swift */,
 				7B501C521FEA52ED00995AD2 /* AppDelegate.swift */,
 				7B501C671FEE19B700995AD2 /* Extensions.swift */,

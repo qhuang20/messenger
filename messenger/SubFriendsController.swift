@@ -11,7 +11,7 @@ import CoreData
 
 class SubFriendsController: FriendsController {
     
-    var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+    //var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     
     let context = ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext)!
     
@@ -48,6 +48,10 @@ class SubFriendsController: FriendsController {
         createMessageWith(text: "Good morning..", friend: steve, minutesAgo: 3)
         createMessageWith(text: "Hello, how are you?", friend: steve, minutesAgo: 2, isSender: true)
         createMessageWith(text: "Are you interested in buying an Apple device? We have a wide variety of apple devices that will suit your needs. Please make your purchase with us", friend: steve, minutesAgo: 1)
+        createMessageWith(text: "Hello, how are you? blalaalallalalalallalalalalalalalAre you interested in buying an Apple device? We have a wide variety of apple devices that will suiaallalalalalalala", friend: steve, minutesAgo: 0.7, isSender: true)
+        createMessageWith(text: "Are you interested in buying an Apple device? We have a wide variety of apple devices that will suit your needs. Please make your purchase with us", friend: steve, minutesAgo: 0.5)
+        createMessageWith(text: "Hello, how are you? blalaalallalalalallalalalalalalalaallalalalalalala. Are you interested in buying an Apple device? We have a wide variety of apple devices that will suit your needs. Please make your purchase with us", friend: steve, minutesAgo: 0.2, isSender: true)
+         createMessageWith(text: "Hello, how are you? blalaalallalalalallalalalalalalalaallalalalalalala. Are you interested in buying an Apple device? We have a wide variety of apple devices that will suit your needs. Please make your purchase with us", friend: steve, minutesAgo: 0.1, isSender: true)
         
         let donald = createFriendWith(name: "Donald Trump", profileImageName: "donald_trump_profile")
         createMessageWith(text: "You're fired", friend: donald, minutesAgo: 5)
@@ -120,6 +124,16 @@ class SubFriendsController: FriendsController {
         } catch let err { print(err) }
         
         return []
+    }
+    
+    static func createMessageWith(text: String, friend: Friend, minutesAgo: Double, isSender: Bool = false) {
+        let context = ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext)!
+
+        let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: context) as! Message
+        message.friend = friend
+        message.text = text
+        message.date = NSDate().addingTimeInterval(-minutesAgo * 60)
+        message.isSender = isSender
     }
     
 }
