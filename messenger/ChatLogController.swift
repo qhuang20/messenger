@@ -45,7 +45,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     @objc func handleSend() {
 
-        SubFriendsController.createMessageWith(text: inputTextField.text!, friend: friend!, minutesAgo: 0, isSender: true)
+        Message.createMessageWith(text: inputTextField.text!, friend: friend!, minutesAgo: 0, isSender: true)
         
         do {
             try context.save()
@@ -67,8 +67,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     }()
  
     @objc func simulate() {
-        SubFriendsController.createMessageWith(text: "Here's a text message that was sent a few minutes ago...", friend: friend!, minutesAgo: 0)
-        SubFriendsController.createMessageWith(text: "Here's a text message that was sent a few minutes ago...", friend: friend!, minutesAgo: 0)
+        Message.createMessageWith(text: "Here's a text message that was sent a few minutes ago...", friend: friend!, minutesAgo: 0)
+        Message.createMessageWith(text: "Here's a text message that was sent a few minutes ago...", friend: friend!, minutesAgo: 0)
         
         do {
             try context.save()
@@ -105,14 +105,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            try fetchedResultsControler.performFetch()
-            
-        } catch let err {
-            print(err)
-        }
-        
+
+        try? fetchedResultsControler.performFetch()
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Simulate", style: .plain, target: self, action: #selector(simulate))
         
         tabBarController?.tabBar.isHidden = true

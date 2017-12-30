@@ -39,11 +39,8 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         
         setupData()
         
-        do {
-            try fetchedResultsControler.performFetch()
-        } catch let err {
-            print(err)
-        }
+        try? fetchedResultsControler.performFetch()
+
     }
     
     internal func setupData() {

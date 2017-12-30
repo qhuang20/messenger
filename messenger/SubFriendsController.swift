@@ -69,7 +69,7 @@ class SubFriendsController: FriendsController {
     }
     
     private func createFriendWith(name: String, profileImageName: String) -> Friend {
-        let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
+        let friend = Friend(context: context)
         friend.name = name
         friend.profileImageName = profileImageName
         
@@ -77,7 +77,7 @@ class SubFriendsController: FriendsController {
     }
     
     private func createMessageWith(text: String, friend: Friend, minutesAgo: Double, isSender: Bool = false) {
-        let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: context) as! Message
+        let message = Message(context: context)
         message.friend = friend
         message.text = text
         message.date = NSDate().addingTimeInterval(-minutesAgo * 60)
@@ -85,16 +85,7 @@ class SubFriendsController: FriendsController {
         
         friend.lastMessage = message////
     }
-    
-    static func createMessageWith(text: String, friend: Friend, minutesAgo: Double, isSender: Bool = false) {
-        let context = ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext)!
-
-        let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: context) as! Message
-        message.friend = friend
-        message.text = text
-        message.date = NSDate().addingTimeInterval(-minutesAgo * 60)
-        message.isSender = isSender
-    }
-    
-}
+    //main queue: context = container?.viewContext. Do someting: context.perform
+    //container?.performBackgroundTask { [weak self] context in ...... }
+}//Thread.isMainThread
 
