@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B1AC1811FF1FB9700591080 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1AC1801FF1FB9700591080 /* CustomTabBarController.swift */; };
+		7B1AC1871FF7043F00591080 /* ChatLogMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1AC1861FF7043F00591080 /* ChatLogMessageCell.swift */; };
 		7B501C531FEA52ED00995AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C521FEA52ED00995AD2 /* AppDelegate.swift */; };
 		7B501C551FEA52ED00995AD2 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C541FEA52ED00995AD2 /* FriendsController.swift */; };
 		7B501C5B1FEA52ED00995AD2 /* messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B501C591FEA52ED00995AD2 /* messenger.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7B1AC1801FF1FB9700591080 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		7B1AC1861FF7043F00591080 /* ChatLogMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogMessageCell.swift; sourceTree = "<group>"; };
 		7B501C4F1FEA52ED00995AD2 /* messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B501C521FEA52ED00995AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B501C541FEA52ED00995AD2 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		7B501C511FEA52ED00995AD2 /* messenger */ = {
 			isa = PBXGroup;
 			children = (
+				7B1AC1861FF7043F00591080 /* ChatLogMessageCell.swift */,
 				7BAE3FA91FF0D54B002525F7 /* ChatLogController.swift */,
 				7B501C861FEF90CB00995AD2 /* MessageCell.swift */,
 				7B501C691FEF55B900995AD2 /* SubFriendsController.swift */,
@@ -171,6 +174,7 @@
 				7BAE3FAA1FF0D54B002525F7 /* ChatLogController.swift in Sources */,
 				7B501C5B1FEA52ED00995AD2 /* messenger.xcdatamodeld in Sources */,
 				7B501C821FEF8DB900995AD2 /* Message.swift in Sources */,
+				7B1AC1871FF7043F00591080 /* ChatLogMessageCell.swift in Sources */,
 				7B501C831FEF8DB900995AD2 /* Message+CoreDataProperties.swift in Sources */,
 				7B501C6A1FEF55B900995AD2 /* SubFriendsController.swift in Sources */,
 				7B501C681FEE19B700995AD2 /* Extensions.swift in Sources */,

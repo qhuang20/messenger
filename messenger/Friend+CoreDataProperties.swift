@@ -2,7 +2,7 @@
 //  Friend+CoreDataProperties.swift
 //  messenger
 //
-//  Created by Qichen Huang on 2017-12-23.
+//  Created by Qichen Huang on 2017-12-29.
 //  Copyright © 2017 Qichen Huang. All rights reserved.
 //
 //
@@ -20,6 +20,7 @@ extension Friend {
     @NSManaged public var name: String?
     @NSManaged public var profileImageName: String?
     @NSManaged public var messages: NSSet?
+    @NSManaged public var lastMessage: Message?
 
 }
 

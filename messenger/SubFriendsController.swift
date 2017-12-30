@@ -11,10 +11,6 @@ import CoreData
 
 class SubFriendsController: FriendsController {
     
-    //var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
-    
-    let context = ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext)!
-    
     private func clearData() {
         
         do {
@@ -70,7 +66,6 @@ class SubFriendsController: FriendsController {
             print(err)
         }
         
-        loadData()
     }
     
     private func createFriendWith(name: String, profileImageName: String) -> Friend {
@@ -87,43 +82,8 @@ class SubFriendsController: FriendsController {
         message.text = text
         message.date = NSDate().addingTimeInterval(-minutesAgo * 60)
         message.isSender = isSender
-    }
-    
-    private func loadData() {
         
-        let frineds = fetchFriends()
-        
-        let fetchRequest: NSFetchRequest<Message> = Message.fetchRequest()
-
-        for friend in frineds {
-            
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
-            fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
-            fetchRequest.fetchLimit = 1
-           
-            do {
-                
-                let fetchedMessages = try context.fetch(fetchRequest)
-                messages?.append(contentsOf: fetchedMessages)
-
-            } catch let err { print(err) }
-        }
-        
-        messages = messages?.sorted(by: {$0.date!.compare($1.date! as Date) == .orderedDescending})//TODO - check it out
-        
-    }
-    
-    private func fetchFriends() -> [Friend] {
-        
-        let fetchRequest: NSFetchRequest<Friend> = Friend.fetchRequest()
-
-        do {
-            
-            return try context.fetch(fetchRequest)
-            
-        } catch let err { print(err) }
-        
-        return []
+        friend.lastMessage = message////
     }
     
     static func createMessageWith(text: String, friend: Friend, minutesAgo: Double, isSender: Bool = false) {
